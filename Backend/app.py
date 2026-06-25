@@ -3,11 +3,11 @@ import psycopg2
 
 app = Flask(__name__)
 
-# Configurações de conexão com o banco de dados PostgreSQL
+
 DB_HOST = "localhost"
-DB_NAME = "roman_passion_db"  # Nome do banco que você criou no pgAdmin
-DB_USER = "postgres"          # Usuário padrão do PostgreSQL
-DB_PASS = "postgres"    # ⚠️ SUBSTITUA pela senha que você definiu no PostgreSQL
+DB_NAME = "roman_passion_db"  
+DB_USER = "postgres"          
+DB_PASS = "postgres"    
 
 def testar_conexao():
     try:
