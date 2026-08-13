@@ -1,0 +1,12 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--t-slow),
+    transform var(--t-slow);
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+}

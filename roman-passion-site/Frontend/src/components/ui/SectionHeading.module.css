@@ -1,0 +1,66 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 46rem;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Fio dourado curto antes da sobrelinha */
+.label::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background-color: var(--hairline-strong);
+}
+
+.center .label::after {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background-color: var(--hairline-strong);
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Sobre fundo claro, o texto de apoio precisa de outro tom */
+.light .title {
+  color: var(--text-on-light);
+}
+
+.light .lead {
+  color: var(--text-on-light-muted);
+}
+
+.light .label {
+  color: var(--bordo);
+}
+
+.light .label::before,
+.light .label::after {
+  background-color: rgba(139, 0, 0, 0.3);
+}

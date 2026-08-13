@@ -1,0 +1,213 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-header);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--t-base),
+    border-color var(--t-base),
+    backdrop-filter var(--t-base);
+}
+
+/* Ao rolar, o cabeçalho ganha fundo e encosta o conteúdo.
+   O fundo desfocado fica num ::before, NÃO no próprio .header: `backdrop-filter`
+   transforma o elemento em bloco de contenção para descendentes `fixed`, o que
+   prenderia a gaveta do menu dentro da altura do cabeçalho. */
+.condensed {
+  border-bottom-color: var(--hairline);
+}
+
+.condensed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(31, 4, 9, 0.88);
+  backdrop-filter: blur(12px) saturate(140%);
+}
+
+.inner {
+  /* z-index acima da gaveta: a logo e o X continuam clicáveis com o menu aberto */
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-4);
+  transition: padding-block var(--t-base);
+}
+
+.condensed .inner {
+  padding-block: var(--space-3);
+}
+
+/* --- Marca --------------------------------------------------------------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: width var(--t-base), height var(--t-base);
+}
+
+.condensed .logo {
+  width: 36px;
+  height: 36px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brandText strong {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-strong);
+}
+
+.brandText small {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --- Navegação ----------------------------------------------------------- */
+.nav {
+  display: none;
+  gap: var(--space-6);
+}
+
+.navLink {
+  position: relative;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-body);
+  padding-block: var(--space-2);
+  transition: color var(--t-fast);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.navLink:hover {
+  color: var(--text-strong);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.headerCta {
+  display: none;
+}
+
+/* --- Botão sanduíche (duas barras, vira X) ------------------------------- */
+/* 44x44 é o mínimo confortável para toque: é o principal controle de
+   navegação no celular e antes tinha só 24px de altura. */
+.burger {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+}
+
+.burger span {
+  display: block;
+  height: 1px;
+  width: 22px;
+  background-color: var(--cream);
+  transition: transform var(--t-base), opacity var(--t-base);
+}
+
+.barTop {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.barMid {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* --- Gaveta mobile ------------------------------------------------------- */
+/* Cobre a tela inteira. Antes era um painel de altura automática, e o conteúdo
+   do hero aparecia embaixo dele — parecia quebrado. O padding-top abre espaço
+   para a faixa do cabeçalho, que fica por cima (.inner tem z-index maior). */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: 6.5rem var(--gutter) var(--space-8);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background-color: var(--ink);
+}
+
+/* OBRIGATÓRIO. O `[hidden] { display: none }` vem da folha de estilo do
+   navegador e PERDE para o `display: flex` acima, que é regra de autor. Sem
+   esta linha a gaveta fica visível na tela mesmo com o menu fechado. */
+.drawer[hidden] {
+  display: none;
+}
+
+.drawer nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empurra o botão para o rodapé da tela */
+.drawerCta {
+  margin-top: auto;
+}
+
+.drawerLink {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-strong);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--ink-line);
+}
+
+/* --- Desktop ------------------------------------------------------------- */
+@media (min-width: 900px) {
+  .nav,
+  .headerCta {
+    display: flex;
+  }
+
+  .burger,
+  .drawer {
+    display: none;
+  }
+}

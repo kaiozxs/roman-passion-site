@@ -1,0 +1,59 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0.9375rem var(--space-6);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition:
+    background-color var(--t-base),
+    border-color var(--t-base),
+    color var(--t-base),
+    transform var(--t-fast);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* Ouro sólido: ação principal da página */
+.solid {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+.solid:hover {
+  background-color: var(--cream);
+}
+
+/* Contorno claro: ação secundária sobre fundo escuro */
+.outline {
+  border-color: var(--hairline-strong);
+  color: var(--cream);
+}
+
+.outline:hover {
+  border-color: var(--gold);
+  background-color: rgba(197, 160, 89, 0.1);
+  color: var(--text-strong);
+}
+
+/* Bordô sólido: ação sobre fundo claro */
+.dark {
+  background-color: var(--bordo);
+  color: #fff;
+}
+
+.dark:hover {
+  background-color: var(--bordo-dark);
+}

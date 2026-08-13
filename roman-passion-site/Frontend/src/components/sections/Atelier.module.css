@@ -1,0 +1,74 @@
+/* Seção clara: quebra o bloco escuro e destaca o processo */
+.section {
+  padding-block: var(--section-y);
+  background-color: var(--surface-light);
+  color: var(--text-on-light);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* --- Etapas -------------------------------------------------------------- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.step {
+  display: flex;
+  gap: var(--space-5);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.step:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.iconBox {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  color: var(--bordo);
+  background-color: var(--surface-light-alt);
+  border: 1px solid rgba(139, 0, 0, 0.14);
+  border-radius: 50%;
+}
+
+.stepTitle {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--fs-h3);
+  color: var(--text-on-light);
+  margin-bottom: var(--space-2);
+}
+
+.stepNum {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  color: var(--gold-dark);
+}
+
+.stepText {
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--text-on-light-muted);
+  max-width: 34rem;
+}
+
+@media (min-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-9);
+  }
+}
