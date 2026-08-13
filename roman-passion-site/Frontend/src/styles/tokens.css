@@ -1,0 +1,93 @@
+/* ==========================================================================
+   ROMAN PASSION — TOKENS DE DESIGN
+   Fonte da verdade para cor, tipografia, espaçamento e elevação.
+   A paleta é a mesma já usada no painel administrativo (login.css) e na
+   primeira versão da landing: bordô, ouro champagne e creme.
+   ========================================================================== */
+
+:root {
+  /* --- Marca ------------------------------------------------------------ */
+  --bordo: #8b0000;
+  --bordo-dark: #660000;
+  --gold: #c5a059;
+  --gold-dark: #b38f4b;
+  --cream: #f5ebe0;
+
+  /* Tons profundos derivados do bordô, usados como fundo da vitrine */
+  --ink: #1f0409;
+  --ink-raised: #2a070d;
+  --ink-line: #3a1017;
+
+  /* --- Texto ------------------------------------------------------------ */
+  --text-strong: #fdfaf7;
+  --text-body: #e4d3c8;
+  --text-muted: #a8828a;
+
+  /* --- Superfícies ------------------------------------------------------ */
+  --surface-light: #faf6f2;
+  --surface-light-alt: #f1e7dd;
+  --text-on-light: #1e2229;
+  --text-on-light-muted: #6e5a5f;
+
+  /* --- Traços e véus ---------------------------------------------------- */
+  --hairline: rgba(197, 160, 89, 0.22);
+  --hairline-strong: rgba(197, 160, 89, 0.45);
+  --hairline-dark: rgba(30, 34, 41, 0.12);
+  --veil: rgba(31, 4, 9, 0.72);
+
+  /* --- Tipografia ------------------------------------------------------- */
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+
+  /* Escala fluida: encolhe no mobile sem media query.
+     O display também respeita a ALTURA da tela (9vh) — sem isso, num notebook
+     1366x768 o título come o hero inteiro e os botões saem da primeira dobra. */
+  --fs-display: clamp(2.75rem, min(7vw, 9vh), 5.25rem);
+  --fs-h2: clamp(2rem, 4.2vw, 3.25rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-lead: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-label: 0.75rem;
+
+  --tracking-label: 0.18em;
+  --tracking-tight: -0.02em;
+
+  /* --- Espaçamento (base 4px) ------------------------------------------ */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Respiro vertical das seções, fluido */
+  --section-y: clamp(4.5rem, 10vw, 9rem);
+
+  /* --- Layout ----------------------------------------------------------- */
+  /* 1320px aproveita monitores grandes sem esticar linha de texto: quem limita
+     a leitura são os max-width dos blocos de texto, não o container. */
+  --container: 1320px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* --- Forma e elevação ------------------------------------------------- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+  --shadow-raise: 0 18px 48px rgba(15, 2, 5, 0.45);
+  --shadow-light: 0 16px 44px rgba(30, 34, 41, 0.1);
+
+  /* --- Movimento -------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 160ms var(--ease-out);
+  --t-base: 320ms var(--ease-out);
+  --t-slow: 720ms var(--ease-out);
+
+  --z-header: 100;
+}

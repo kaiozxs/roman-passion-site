@@ -1,0 +1,56 @@
+/* Faixa em bordô: único bloco com a cor cheia da marca */
+.section {
+  padding-block: var(--section-y);
+  background:
+    radial-gradient(
+      120% 90% at 50% 0%,
+      rgba(197, 160, 89, 0.16) 0%,
+      transparent 55%
+    ),
+    linear-gradient(135deg, var(--bordo-dark) 0%, var(--bordo) 55%, #4d0000 100%);
+}
+
+/* Coluna única centralizada: a seção tem uma ação só, e a composição
+   centralizada deixa isso explícito em vez de dividir a atenção. */
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Fios claros dos dois lados da sobrelinha */
+.label::before,
+.label::after {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background-color: rgba(245, 235, 224, 0.5);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  max-width: 26ch;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: rgba(253, 250, 247, 0.82);
+  max-width: 44ch;
+  margin-bottom: var(--space-3);
+}

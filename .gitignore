@@ -1,9 +1,50 @@
-# Arquivos de ambiente virtual do Python
+# ==========================================================================
+# Dependências (reinstaláveis com npm install / pip install)
+# ==========================================================================
+node_modules/
+
+# Ambiente virtual do Python
 venv/
 .venv/
 __pycache__/
 *.pyc
 
-# Arquivos do sistema operacional
+# ==========================================================================
+# Saída de build (a hospedagem gera sozinha a cada deploy)
+# ==========================================================================
+dist/
+dist-ssr/
+
+# ==========================================================================
+# Segredos — NUNCA versionar
+# ==========================================================================
+.env
+.env.*
+!.env.example
+
+# ==========================================================================
+# Logs e temporários
+# ==========================================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.local
+
+# ==========================================================================
+# Configuração local do Claude Code (permissões pessoais da máquina)
+# O launch.json fica versionado de propósito: serve para toda a equipe.
+# ==========================================================================
+.claude/settings.local.json
+
+# ==========================================================================
+# Editor e sistema operacional
+# ==========================================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
 .DS_Store
 Thumbs.db
+*.suo
+*.sw?

@@ -1,0 +1,101 @@
+.footer {
+  padding-top: var(--space-9);
+  background-color: #170307;
+  border-top: 1px solid var(--ink-line);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-7);
+  padding-bottom: var(--space-8);
+}
+
+/* --- Coluna da marca ----------------------------------------------------- */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.manifesto {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 22rem;
+}
+
+/* --- Colunas de links ---------------------------------------------------- */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+
+.nav ul,
+.social {
+  display: flex;
+  flex-direction: column;
+  /* O respiro do toque vem do padding dos links, não do gap da lista */
+  gap: var(--space-1);
+}
+
+.nav a,
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  /* Amplia a área de toque no celular sem mudar o ritmo visual */
+  padding-block: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-body);
+  transition: color var(--t-fast);
+}
+
+.nav a:hover,
+.social a:hover {
+  color: var(--gold);
+}
+
+.social svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.city {
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* --- Linha final --------------------------------------------------------- */
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--ink-line);
+  font-size: var(--fs-label);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+@media (min-width: 760px) {
+  .inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
