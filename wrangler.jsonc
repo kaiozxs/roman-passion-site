@@ -1,0 +1,15 @@
+{
+  // Configuração do deploy na Cloudflare.
+  //
+  // O site é 100% estático: não existe código de servidor, só os arquivos que
+  // o Vite gera em dist/. Por isso não há campo "main" aqui — apenas "assets",
+  // que diz à Cloudflare qual pasta servir.
+  //
+  // O nome precisa ser igual ao do projeto criado no painel da Cloudflare.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "roman-passion-site",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
