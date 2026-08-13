@@ -5,9 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  // dashboard.js/login.js são o painel legado em JS puro, fora do build do Vite.
-  // Ficam ignorados para o lint continuar sinalizando só o código do site React.
-  globalIgnores(['dist', 'dashboard.js', 'login.js']),
+  globalIgnores(['dist']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
