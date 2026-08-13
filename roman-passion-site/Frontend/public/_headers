@@ -1,0 +1,22 @@
+# Cabeçalhos HTTP lidos pelo Cloudflare Pages.
+# Este arquivo é copiado para a raiz do build (não vira uma página do site).
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Os arquivos de assets levam hash no nome (index-a1b2c3.js), então trocam de
+# nome a cada build. Podem ser cacheados para sempre com segurança.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# As fotos NÃO levam hash no nome. Cache de 1 dia de propósito: se você
+# substituir uma foto mantendo o mesmo nome de arquivo, ela aparece no dia
+# seguinte. Com cache "immutable" aqui, quem já visitou veria a foto antiga
+# por um ano.
+/images/*
+  Cache-Control: public, max-age=86400
+
+/logo.png
+  Cache-Control: public, max-age=86400
