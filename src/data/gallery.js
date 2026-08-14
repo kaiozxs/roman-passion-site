@@ -68,11 +68,6 @@ export const GALLERY = [
     arquivo: "mesa-doces-branca.webp",
     alt: "Mesa de doces em tons de branco, com travessas de cristal, brigadeiros brancos e arranjos de flores brancas.",
   },
-  {
-    id: "g12",
-    arquivo: "brownies-embalados.jpg",
-    alt: "Brownies da Roman Passion embalados individualmente, com a etiqueta da marca, sobre tábua de madeira ao lado de potes de vidro com doces.",
-  },
 ];
 
 /** Caminho público da foto. */
