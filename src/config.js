@@ -27,8 +27,8 @@ export const CONTACT = {
   casamentosUrl:
     "https://www.casamentos.com.br/doces-casamento/roman-passion-chocolateria--e362448",
   city: "Rio de Janeiro, RJ",
-  /** Presença verificada no portal de casamentos. */
-  since: "No Casamentos.com.br desde 2022",
+  /** Presença verificada no portal de casamentos (conferido no perfil). */
+  since: "No Casamentos.com.br desde 2019",
   /** Como o atendimento funciona (conforme material oficial da marca). */
   service: "Atendimento do primeiro contato até a entrega",
 
