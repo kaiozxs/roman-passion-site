@@ -4,6 +4,7 @@ import Hero from "./components/sections/Hero";
 import Gallery from "./components/sections/Gallery";
 import Atelier from "./components/sections/Atelier";
 import Occasions from "./components/sections/Occasions";
+import Mesas from "./components/sections/Mesas";
 import Awards from "./components/sections/Awards";
 import Order from "./components/sections/Order";
 
@@ -21,6 +22,7 @@ export default function App() {
         <Gallery />
         <Atelier />
         <Occasions />
+        <Mesas />
         <Awards />
         <Order />
       </main>

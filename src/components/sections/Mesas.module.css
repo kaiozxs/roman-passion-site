@@ -1,0 +1,209 @@
+/* Seção clara: fotografia de comida rende muito mais sobre fundo creme */
+.section {
+  padding-block: var(--section-y);
+  background-color: var(--surface-light);
+  color: var(--text-on-light);
+}
+
+/* ==========================================================================
+   MOSAICO
+   Colunas CSS em vez de grid: cada foto mantém a proporção original e as
+   colunas se encaixam sozinhas. Um grid de linhas fixas deixaria sobras,
+   porque as fotos são metade retrato e metade paisagem.
+   ========================================================================== */
+.mosaico {
+  margin-top: var(--space-8);
+  column-count: 1;
+  column-gap: var(--space-4);
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+}
+
+.botao {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-light-alt);
+  cursor: zoom-in;
+  transition: box-shadow var(--t-base), transform var(--t-base);
+}
+
+.botao:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-light);
+}
+
+/* width/height no HTML + height:auto = proporção reservada, zero salto */
+.foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform var(--t-slow);
+}
+
+.botao:hover .foto {
+  transform: scale(1.03);
+}
+
+/* --- Lupa que aparece no hover ------------------------------------------- */
+.lupa {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--ink);
+  background-color: rgba(250, 246, 242, 0.92);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity var(--t-base), transform var(--t-base);
+}
+
+.botao:hover .lupa,
+.botao:focus-visible .lupa {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Crédito do fotógrafo ------------------------------------------------ */
+.credito {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-4) var(--space-3) var(--space-2);
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: right;
+  color: rgba(253, 250, 247, 0.85);
+  background: linear-gradient(to top, rgba(20, 3, 6, 0.6), transparent);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   VISOR EM TELA CHEIA
+   ========================================================================== */
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: rgba(14, 2, 4, 0.94);
+  animation: surgir var(--t-base) both;
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+  }
+}
+
+.visorFigura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+  min-width: 0;
+}
+
+.visorFoto {
+  max-width: 100%;
+  /* Desconta o espaço da legenda para a foto nunca estourar a tela */
+  max-height: calc(100svh - 8rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.visorLegenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.visorBtn {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--cream);
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  background-color: rgba(31, 4, 9, 0.6);
+  transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast);
+}
+
+.visorBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.fechar {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (min-width: 640px) {
+  .mosaico {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mosaico {
+    column-count: 3;
+  }
+}
+
+/* No celular as setas laterais roubariam largura da foto: vão para a base */
+@media (max-width: 639px) {
+  .visor {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+  }
+
+  .anterior {
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .proxima {
+    grid-row: 2;
+    justify-self: end;
+  }
+
+  .visorFigura {
+    grid-row: 1;
+  }
+
+  .visorFoto {
+    max-height: calc(100svh - 12rem);
+  }
+}
