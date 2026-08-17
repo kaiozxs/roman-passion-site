@@ -24,18 +24,30 @@ export default function Awards() {
           lead="Quem contratou avaliou. As notas e os prêmios abaixo podem ser conferidos nos perfis públicos da Roman Passion."
         />
 
-        {/* --- Notas --- */}
+        {/* --- Notas: cada card leva ao perfil onde a nota pode ser conferida --- */}
         <ul className={styles.notas}>
           {avaliacoes.map((a, i) => (
-            <Reveal as="li" key={a.fonte} delay={i * 100} className={styles.nota}>
-              <div className={styles.estrelas} aria-hidden="true">
-                {Array.from({ length: 5 }, (_, n) => (
-                  <Icon key={n} name="star" size={16} />
-                ))}
-              </div>
-              <strong className={styles.valor}>{a.nota}</strong>
-              <span className={styles.fonte}>{a.fonte}</span>
-              <span className={styles.volume}>{a.volume}</span>
+            <Reveal as="li" key={a.fonte} delay={i * 100}>
+              <a
+                className={styles.nota}
+                href={a.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`Ver as ${a.volume} no ${a.fonte}, nota ${a.nota} de 5`}
+              >
+                <div className={styles.estrelas} aria-hidden="true">
+                  {Array.from({ length: 5 }, (_, n) => (
+                    <Icon key={n} name="star" size={16} />
+                  ))}
+                </div>
+                <strong className={styles.valor}>{a.nota}</strong>
+                <span className={styles.fonte}>{a.fonte}</span>
+                <span className={styles.volume}>{a.volume}</span>
+                <span className={styles.verPerfil}>
+                  Ver avaliações
+                  <Icon name="external" size={14} />
+                </span>
+              </a>
             </Reveal>
           ))}
         </ul>

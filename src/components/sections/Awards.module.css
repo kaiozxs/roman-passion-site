@@ -15,21 +15,48 @@
   margin-inline: auto;
 }
 
+/* O card inteiro é o link: área de clique generosa e afordância clara */
 .nota {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-2);
+  height: 100%;
   padding: var(--space-6) var(--space-5);
   text-align: center;
   background-color: var(--ink-raised);
   border: 1px solid var(--ink-line);
   border-radius: var(--radius-md);
-  transition: border-color var(--t-base);
+  transition:
+    border-color var(--t-base),
+    transform var(--t-base),
+    box-shadow var(--t-base);
 }
 
 .nota:hover {
   border-color: var(--hairline-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-raise);
+}
+
+/* --- Chamada de saída ----------------------------------------------------- */
+.verPerfil {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-block: var(--space-2);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--t-fast), gap var(--t-fast);
+}
+
+.nota:hover .verPerfil {
+  color: var(--gold);
+  gap: var(--space-3);
 }
 
 .estrelas {

@@ -25,6 +25,14 @@ export const CONTACT = {
   facebookUrl: "https://www.facebook.com/RomanPassionChocolateria/",
   casamentosUrl:
     "https://www.casamentos.com.br/doces-casamento/roman-passion-chocolateria--e362448",
+  /**
+   * Perfil no Google. É uma busca do Maps pelo nome exato da empresa, que cai
+   * na ficha certa.
+   * TODO: trocar pelo link direto — no perfil do Google, botão "Compartilhar"
+   * gera uma URL curta (maps.app.goo.gl/...) que aponta sem intermediários.
+   */
+  googleUrl:
+    "https://www.google.com/maps/search/?api=1&query=Roman+Passion+Doces+Finos+%26+Bem+Casados+Nova+Am%C3%A9rica+Rio+de+Janeiro",
   city: "Rio de Janeiro, RJ",
   /** Presença verificada no portal de casamentos (conferido no perfil). */
   since: "No Casamentos.com.br desde 2019",
@@ -49,9 +57,20 @@ export const ATENDIMENTO = [
 export const RECONHECIMENTO = {
   /** Anos em que a marca recebeu o Casamentos Awards. */
   premios: ["2023", "2024", "2025", "2026"],
+  /** `url` torna o card clicável — a nota deixa de ser afirmação e vira prova. */
   avaliacoes: [
-    { fonte: "Google", nota: "5,0", volume: "34 avaliações" },
-    { fonte: "Casamentos.com.br", nota: "5,0", volume: "100 opiniões" },
+    {
+      fonte: "Google",
+      nota: "5,0",
+      volume: "34 avaliações",
+      url: CONTACT.googleUrl,
+    },
+    {
+      fonte: "Casamentos.com.br",
+      nota: "5,0",
+      volume: "100 opiniões",
+      url: CONTACT.casamentosUrl,
+    },
   ],
 };
 
