@@ -81,6 +81,13 @@ const PATHS = {
       <path d="M15.5 8h-1.75A2.25 2.25 0 0 0 11.5 10.25V21M9.25 13.4h5" />
     </>
   ),
+  /* Coroa: usada para XV anos */
+  crown: (
+    <>
+      <path d="M3.5 8.5l3 3.5 3-6 2.5 5 2.5-5 3 6 3-3.5-2 10h-13l-2-10Z" />
+      <path d="M6 21h12" />
+    </>
+  ),
   arrow: <path d="M4 12h15m-6-6 6 6-6 6" />,
   chevronLeft: <path d="m14.5 6-6 6 6 6" />,
   chevronRight: <path d="m9.5 6 6 6-6 6" />,

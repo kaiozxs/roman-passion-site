@@ -48,9 +48,51 @@
 }
 
 .lead {
-  font-size: var(--fs-lead);
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: 1.75;
   color: rgba(253, 250, 247, 0.82);
-  max-width: 44ch;
+  /* Texto longo: limite em ch mantém a linha legível */
+  max-width: 62ch;
+}
+
+/* --- Locais de atendimento ------------------------------------------------ */
+.locais {
+  margin-top: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  background-color: rgba(31, 4, 9, 0.34);
+  border: 1px solid rgba(245, 235, 224, 0.16);
+  border-radius: var(--radius-md);
+}
+
+.locaisTitulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
   margin-bottom: var(--space-3);
+}
+
+.locais ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.locais li {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--cream);
+}
+
+.fecho {
+  font-size: var(--fs-sm);
+  color: rgba(253, 250, 247, 0.72);
+  margin-bottom: var(--space-3);
+  max-width: 46ch;
 }

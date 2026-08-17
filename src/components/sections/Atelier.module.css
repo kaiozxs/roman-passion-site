@@ -59,6 +59,17 @@
   color: var(--gold-dark);
 }
 
+/* Subtítulo em itálico: resume o pilar antes do texto corrido */
+.stepSubtitle {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--bordo);
+  margin-bottom: var(--space-2);
+  max-width: 34rem;
+}
+
 .stepText {
   font-size: var(--fs-sm);
   line-height: 1.7;

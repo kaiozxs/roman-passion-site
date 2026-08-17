@@ -17,11 +17,11 @@ export default function Hero() {
             <em> com a sua festa.</em>
           </h1>
 
-          <p className={styles.lead}>{BRAND.manifesto}</p>
+          <p className={styles.lead}>{BRAND.assinatura}</p>
 
           <div className={styles.ctas}>
             <Button variant="solid" href={whatsappLink()} icon="whatsapp">
-              Pedir orçamento
+              Falar com a Roman
             </Button>
             <Button variant="outline" href="#doces">
               Ver os doces
