@@ -1,16 +1,16 @@
 /**
- * GALERIA DE FOTOS DOS DOCES
+ * CARROSSEL DE DOCES — close-ups
  *
- * Carrossel puramente visual: sem nome, sem preço e sem descrição na tela.
+ * Aqui ficam as fotos aproximadas dos doces. As mesas completas montadas em
+ * evento estão em `src/data/mesas.js`, na galeria em mosaico. A separação é
+ * proposital: são naturezas diferentes de foto.
+ *
  * O texto `alt` NÃO aparece para o visitante comum — ele existe para leitores
- * de tela e para o Google entender a imagem. Por isso ele descreve a foto.
+ * de tela e para o Google entender a imagem. Por isso descreve a foto.
  *
  * Os arquivos ficam em `public/images/doces/`. A ordem desta lista é a ordem
- * do carrossel — reordene à vontade.
- *
- * Para acrescentar uma foto: salve o arquivo naquela pasta e adicione um item
- * aqui. Se o arquivo não existir, o cartão cai no selo da marca em vez de
- * mostrar imagem quebrada.
+ * do carrossel. Se um arquivo não existir, o cartão cai no selo da marca em
+ * vez de mostrar imagem quebrada.
  */
 export const GALLERY = [
   {
@@ -25,38 +25,38 @@ export const GALLERY = [
   },
   {
     id: "g03",
+    arquivo: "trufas-laranja.jpg",
+    alt: "Trufas de chocolate meio amargo finalizadas com uma fatia de laranja desidratada, servidas em taça de vidro.",
+  },
+  {
+    id: "g04",
     arquivo: "bombons-ganache.webp",
     alt: "Bombons quadrados de chocolate escuro com ganache em espiral e pérolas, em prato de cristal ao lado de um arranjo de flores.",
   },
   {
-    id: "g04",
-    arquivo: "tacas-frutas-vermelhas.webp",
-    alt: "Doces de colher em taças individuais, com creme e calda de frutas vermelhas, alinhados em bandeja dourada.",
-  },
-  {
     id: "g05",
-    arquivo: "lembrancas-laco.webp",
-    alt: "Lembranças de chocolate embaladas uma a uma e fechadas com laço de cetim branco, em bowl de madeira.",
+    arquivo: "tortinhas-mirtilo.jpg",
+    alt: "Tortinhas de massa amanteigada com creme e mirtilo fresco, alinhadas em suporte dourado.",
   },
   {
     id: "g06",
-    arquivo: "suporte-dois-andares.webp",
-    alt: "Suporte dourado de dois andares: copinhos de chocolate branco com mirtilo em cima e copinhos de chocolate escuro embaixo.",
+    arquivo: "brigadeiros-brancos-mirtilo.jpg",
+    alt: "Brigadeiros brancos cobertos de granulado claro, cada um finalizado com um mirtilo, em travessa de cristal.",
   },
   {
     id: "g07",
-    arquivo: "copinhos-frutas-vermelhas.webp",
-    alt: "Copinhos de chocolate escuro finalizados com morango, framboesa e mirtilo, entre arranjos de flores coloridas.",
+    arquivo: "doces-nozes-douradas.jpg",
+    alt: "Doces de chocolate branco finalizados com nozes douradas, servidos em bandeja de madeira entalhada.",
   },
   {
     id: "g08",
-    arquivo: "copinhos-maracuja.webp",
-    alt: "Copinhos de chocolate com recheio de maracujá, servidos em bandeja dourada sobre mesa de madeira.",
+    arquivo: "copinhos-physalis.webp",
+    alt: "Copinhos de chocolate decorados com physalis, dispostos em fileiras sobre bandeja; ao fundo, bombons em prato de cristal.",
   },
   {
     id: "g09",
-    arquivo: "copinhos-physalis.webp",
-    alt: "Copinhos de chocolate decorados com physalis, dispostos em fileiras sobre bandeja; ao fundo, bombons em prato de cristal.",
+    arquivo: "doces-forminhas-rendadas.jpg",
+    alt: "Doces dourados servidos em forminhas rendadas verdes, sobre travessa de cristal, em luz de fim de tarde.",
   },
   {
     id: "g10",
@@ -65,8 +65,8 @@ export const GALLERY = [
   },
   {
     id: "g11",
-    arquivo: "mesa-doces-branca.webp",
-    alt: "Mesa de doces em tons de branco, com travessas de cristal, brigadeiros brancos e arranjos de flores brancas.",
+    arquivo: "lembrancas-laco.webp",
+    alt: "Lembranças de chocolate embaladas uma a uma e fechadas com laço de cetim branco, em bowl de madeira.",
   },
 ];
 
