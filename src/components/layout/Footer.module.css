@@ -74,17 +74,8 @@
   flex-shrink: 0;
 }
 
-.endereco {
-  margin-top: var(--space-4);
-  font-size: var(--fs-sm);
-  font-style: normal;
-  line-height: 1.6;
-  color: var(--text-muted);
-  max-width: 20rem;
-}
-
 .city {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
   font-size: var(--fs-sm);
   color: var(--text-muted);
 }

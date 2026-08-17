@@ -39,10 +39,6 @@ export const ATENDIMENTO = [
   "São Gonçalo — RJ",
 ];
 
-/** Endereço da unidade do Shopping Nova América (conforme o perfil no Google). */
-export const ENDERECO =
-  "Av. Pastor Martin Luther King Jr., 126 — Torre Offices 1000, Nova América, Rio de Janeiro — RJ, 20765-000";
-
 /**
  * Reconhecimento público. Números conferidos nos perfis em agosto de 2026 —
  * eles mudam com o tempo, então atualize aqui quando necessário.
