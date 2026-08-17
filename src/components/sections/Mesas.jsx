@@ -73,9 +73,10 @@ export default function Mesas() {
                 <span className={styles.lupa} aria-hidden="true">
                   <Icon name="search" size={18} />
                 </span>
-                {m.credito && (
-                  <span className={styles.credito}>Foto: {m.credito}</span>
-                )}
+                {/* Sem etiqueta de crédito sobre a miniatura: as fotos que têm
+                    autor já traziam a marca d'água do fotógrafo gravada, e
+                    duplicar o crédito só sujava a imagem. O crédito aparece no
+                    visor, na legenda abaixo da foto. */}
               </button>
             </li>
           ))}

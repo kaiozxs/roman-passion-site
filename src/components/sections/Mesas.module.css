@@ -74,22 +74,6 @@
   transform: none;
 }
 
-/* --- Crédito do fotógrafo ------------------------------------------------ */
-.credito {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: var(--space-4) var(--space-3) var(--space-2);
-  font-size: 0.625rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: right;
-  color: rgba(253, 250, 247, 0.85);
-  background: linear-gradient(to top, rgba(20, 3, 6, 0.6), transparent);
-  pointer-events: none;
-}
-
 /* ==========================================================================
    VISOR EM TELA CHEIA
    ========================================================================== */
