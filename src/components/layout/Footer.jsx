@@ -1,4 +1,4 @@
-import { BRAND, CONTACT, ENDERECO, NAV_LINKS, whatsappLink } from "../../config";
+import { BRAND, CONTACT, NAV_LINKS, whatsappLink } from "../../config";
 import Icon from "../ui/Icon";
 import styles from "./Footer.module.css";
 
@@ -47,7 +47,6 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <address className={styles.endereco}>{ENDERECO}</address>
           <p className={styles.city}>{CONTACT.entrega}</p>
         </div>
       </div>
