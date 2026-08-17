@@ -4,6 +4,7 @@ import Hero from "./components/sections/Hero";
 import Gallery from "./components/sections/Gallery";
 import Atelier from "./components/sections/Atelier";
 import Occasions from "./components/sections/Occasions";
+import Awards from "./components/sections/Awards";
 import Order from "./components/sections/Order";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Gallery />
         <Atelier />
         <Occasions />
+        <Awards />
         <Order />
       </main>
 
