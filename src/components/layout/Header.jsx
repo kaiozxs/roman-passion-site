@@ -33,8 +33,8 @@ export default function Header() {
             src="/logo.png"
             alt={`${BRAND.name} — ${BRAND.tagline}`}
             className={styles.logo}
-            width="44"
-            height="44"
+            width="64"
+            height="64"
           />
           <span className={styles.brandText}>
             <strong>{BRAND.name}</strong>
@@ -57,7 +57,7 @@ export default function Header() {
             icon="whatsapp"
             className={styles.headerCta}
           >
-            Encomendar
+            Falar com a Roman
           </Button>
 
           <button
@@ -95,7 +95,7 @@ export default function Header() {
           icon="whatsapp"
           className={styles.drawerCta}
         >
-          Encomendar pelo WhatsApp
+          Falar com a Roman
         </Button>
       </div>
     </header>

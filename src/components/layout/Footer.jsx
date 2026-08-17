@@ -21,7 +21,7 @@ export default function Footer() {
             width="64"
             height="64"
           />
-          <p className={styles.manifesto}>{BRAND.manifesto}</p>
+          <p className={styles.manifesto}>{BRAND.assinatura}</p>
         </div>
 
         <nav className={styles.nav} aria-label="Navegação do rodapé">

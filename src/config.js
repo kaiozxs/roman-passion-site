@@ -11,9 +11,8 @@ export const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
 export const BRAND = {
   name: "Roman Passion",
   tagline: "Chocolateria Artesanal",
-  /** Frase de marca herdada da primeira versão do site. */
-  manifesto:
-    "Transformando seus momentos inesquecíveis em experiências inigualavelmente doces.",
+  /** Assinatura da marca, exibida no hero e no rodapé. */
+  assinatura: "Desde 2019, adoçando momentos que ficam para sempre.",
 };
 
 export const CONTACT = {
@@ -29,17 +28,20 @@ export const CONTACT = {
   city: "Rio de Janeiro, RJ",
   /** Presença verificada no portal de casamentos (conferido no perfil). */
   since: "No Casamentos.com.br desde 2019",
-  /** Como o atendimento funciona (conforme material oficial da marca). */
-  service: "Atendimento do primeiro contato até a entrega",
-
-  // TODO (opcional): se a empresa tiver e-mail e horário de atendimento
-  // públicos, adicione aqui e inclua nos canais de Order.jsx / Footer.jsx.
-  // Foram removidos por não haver dado real confirmado.
+  /** Alcance da entrega. */
+  entrega: "Entregamos em todo o Estado do Rio de Janeiro",
 };
+
+/** Onde a degustação presencial acontece. */
+export const ATENDIMENTO = [
+  "Shopping Nova América — RJ",
+  "Pendotiba — Niterói/RJ",
+  "São Gonçalo — RJ",
+];
 
 /** Mensagem que já vai preenchida ao abrir a conversa no WhatsApp. */
 export function whatsappLink(
-  message = "Olá! Gostaria de fazer um orçamento com a Roman Passion.",
+  message = "Olá! Gostaria de falar com a Roman e agendar uma degustação.",
 ) {
   return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`;
 }
@@ -48,5 +50,5 @@ export const NAV_LINKS = [
   { href: "#doces", label: "Doces" },
   { href: "#atelier", label: "A Chocolateria" },
   { href: "#ocasioes", label: "Ocasiões" },
-  { href: "#encomendas", label: "Orçamento" },
+  { href: "#degustacao", label: "Degustação" },
 ];

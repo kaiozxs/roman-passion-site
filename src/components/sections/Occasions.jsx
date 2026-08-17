@@ -2,26 +2,33 @@ import { whatsappLink } from "../../config";
 import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
+import { ordinal } from "../../utils/format";
 import styles from "./Occasions.module.css";
 
 const OCCASIONS = [
   {
     icon: "rings",
     title: "Casamentos",
-    text: "Mesa de doces e lembranças para os convidados, com apresentação alinhada à decoração e ao cerimonial.",
-    cta: "Orçar para o meu casamento",
+    text: "Uma mesa de doces completa, com sabores variados para agradar todos os convidados e uma apresentação que harmoniza com o grande dia.",
+    cta: "Falar com a Roman sobre casamento",
+  },
+  {
+    icon: "crown",
+    title: "XV anos",
+    text: "Uma mesa de doces jovem, criativa e cheia de personalidade, com sabores que conquistam os paladares dos aniversariantes, amigos e convidados.",
+    cta: "Falar com a Roman sobre XV anos",
   },
   {
     icon: "gift",
     title: "Aniversários e festas",
-    text: "Doces que acompanham o tema da festa, do formato às cores, para adultos e crianças.",
-    cta: "Orçar para a minha festa",
+    text: "Não importa o tamanho da comemoração. Se existe um motivo para celebrar, temos doces para fazer parte desse momento.",
+    cta: "Falar com a Roman sobre festas",
   },
   {
     icon: "corporate",
     title: "Corporativo",
-    text: "Brindes para clientes e equipes, kits de fim de ano e datas comemorativas, com embalagem personalizada.",
-    cta: "Falar sobre brindes",
+    text: "Sua marca também pode ser lembrada pelo sabor: contrate a Roman para festas corporativas, mesas de doces para confraternizações e eventos de fim de ano, além de lembranças personalizadas com a sua logomarca para tornar cada momento ainda mais especial.",
+    cta: "Falar com a Roman sobre eventos corporativos",
   },
 ];
 
@@ -32,19 +39,22 @@ export default function Occasions() {
         <SectionHeading
           align="center"
           label="Ocasiões"
-          title="Para onde os nossos doces costumam ir"
-          lead="Atendemos eventos de qualquer tamanho, da caixa de presente à mesa completa de um casamento."
+          title="Para cada ocasião, uma experiência à altura"
+          lead="Atendemos desde grandes celebrações até eventos mais intimistas, sempre com o cuidado da Roman Passion."
         />
 
         <ul className={styles.grid}>
           {OCCASIONS.map((item, index) => (
-            <Reveal as="li" key={item.title} delay={index * 110} className={styles.card}>
+            <Reveal as="li" key={item.title} delay={index * 90} className={styles.card}>
               <Icon name={item.icon} size={30} className={styles.icon} />
-              <h3 className={styles.title}>{item.title}</h3>
+              <h3 className={styles.title}>
+                <span className={styles.num}>{ordinal(index)}</span>
+                {item.title}
+              </h3>
               <p className={styles.text}>{item.text}</p>
               <a
                 className={styles.link}
-                href={whatsappLink(`Olá! ${item.cta} — ${item.title}.`)}
+                href={whatsappLink(`Olá! ${item.cta}.`)}
                 target="_blank"
                 rel="noreferrer noopener"
               >

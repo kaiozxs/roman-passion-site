@@ -98,8 +98,7 @@ export default function Gallery() {
       <div className={`container ${styles.head}`}>
         <SectionHeading
           label="Os Doces"
-          title="Um cardápio amplo, montado com você"
-          lead="Trabalhamos com os mais variados sabores e combinações. A seleção de cada evento é definida junto ao cliente, conforme o tema e a decoração."
+          title="Uma seleção de doces planejada para cada celebração, pensamos em tudo com você"
         />
 
         <div className={styles.setas}>
