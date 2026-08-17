@@ -39,6 +39,26 @@ export const ATENDIMENTO = [
   "São Gonçalo — RJ",
 ];
 
+/** Endereço da unidade do Shopping Nova América (conforme o perfil no Google). */
+export const ENDERECO =
+  "Av. Pastor Martin Luther King Jr., 126 — Torre Offices 1000, Nova América, Rio de Janeiro — RJ, 20765-000";
+
+/**
+ * Reconhecimento público. Números conferidos nos perfis em agosto de 2026 —
+ * eles mudam com o tempo, então atualize aqui quando necessário.
+ *
+ * Os selos oficiais do Casamentos.com.br não são reproduzidos no site: são
+ * marca registrada do portal. Exibimos os fatos e linkamos a fonte.
+ */
+export const RECONHECIMENTO = {
+  /** Anos em que a marca recebeu o Casamentos Awards. */
+  premios: ["2023", "2024", "2025", "2026"],
+  avaliacoes: [
+    { fonte: "Google", nota: "5,0", volume: "34 avaliações" },
+    { fonte: "Casamentos.com.br", nota: "5,0", volume: "100 opiniões" },
+  ],
+};
+
 /** Mensagem que já vai preenchida ao abrir a conversa no WhatsApp. */
 export function whatsappLink(
   message = "Olá! Gostaria de falar com a Roman e agendar uma degustação.",

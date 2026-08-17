@@ -1,0 +1,129 @@
+.section {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--ink-line);
+}
+
+/* ==========================================================================
+   NOTAS
+   ========================================================================== */
+.notas {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.nota {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+  background-color: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  transition: border-color var(--t-base);
+}
+
+.nota:hover {
+  border-color: var(--hairline-strong);
+}
+
+.estrelas {
+  display: flex;
+  gap: 2px;
+  color: var(--gold);
+}
+
+/* Precisa mirar o <svg> direto: o componente Icon traz fill="none" como
+   atributo, e atributo de apresentação só perde para regra CSS. */
+.estrelas svg {
+  fill: currentColor;
+}
+
+.valor {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-strong);
+}
+
+.fonte {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--cream);
+}
+
+.volume {
+  font-size: var(--fs-label);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PRÊMIOS
+   ========================================================================== */
+.premios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--ink-line);
+}
+
+.premiosTitulo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.anos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* Cada ano num selo de fio dourado — linguagem do site, não do portal */
+.anos li {
+  display: grid;
+  place-items: center;
+  min-width: 5.5rem;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-md);
+  background-color: rgba(197, 160, 89, 0.06);
+}
+
+.fonteLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  transition: color var(--t-fast), gap var(--t-fast);
+}
+
+.fonteLink:hover {
+  color: var(--gold);
+  gap: var(--space-3);
+}
