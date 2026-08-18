@@ -60,7 +60,9 @@ export const ATENDIMENTO = [
 export const RECONHECIMENTO = {
   /** Anos em que a marca recebeu o Casamentos Awards, do mais recente ao antigo. */
   premios: [
-    { ano: "2026", arquivo: "selo-casamentos-2026.jpg" },
+    // PNG, não JPEG: o selo de 2026 é redondo, e o alfa deixa o azulejo creme
+    // aparecer nos cantos. Em JPEG os cantos vinham brancos.
+    { ano: "2026", arquivo: "selo-casamentos-2026.png" },
     { ano: "2025", arquivo: "selo-casamentos-2025.jpg" },
     { ano: "2024", arquivo: "selo-casamentos-2024.jpg" },
     { ano: "2023", arquivo: "selo-casamentos-2023.jpg" },
