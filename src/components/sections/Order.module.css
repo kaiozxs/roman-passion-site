@@ -3,23 +3,25 @@
   padding-block: var(--section-y);
   background:
     radial-gradient(
-      120% 90% at 50% 0%,
+      120% 90% at 20% 0%,
       rgba(197, 160, 89, 0.16) 0%,
       transparent 55%
     ),
     linear-gradient(135deg, var(--bordo-dark) 0%, var(--bordo) 55%, #4d0000 100%);
 }
 
-/* Coluna única centralizada: a seção tem uma ação só, e a composição
-   centralizada deixa isso explícito em vez de dividir a atenção. */
+.inner {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* --- Texto ---------------------------------------------------------------- */
 .copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-4);
-  max-width: 44rem;
-  margin-inline: auto;
-  text-align: center;
 }
 
 .label {
@@ -33,9 +35,7 @@
   color: var(--gold);
 }
 
-/* Fios claros dos dois lados da sobrelinha */
-.label::before,
-.label::after {
+.label::before {
   content: "";
   width: 2rem;
   height: 1px;
@@ -44,20 +44,20 @@
 
 .title {
   font-size: var(--fs-h2);
-  max-width: 26ch;
+  max-width: 24ch;
 }
 
 .lead {
   font-size: var(--fs-body);
   line-height: 1.75;
   color: rgba(253, 250, 247, 0.82);
-  /* Texto longo: limite em ch mantém a linha legível */
-  max-width: 62ch;
+  max-width: 52ch;
 }
 
 /* --- Locais de atendimento ------------------------------------------------ */
 .locais {
-  margin-top: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-2);
   padding: var(--space-5) var(--space-6);
   background-color: rgba(31, 4, 9, 0.34);
   border: 1px solid rgba(245, 235, 224, 0.16);
@@ -67,7 +67,6 @@
 .locaisTitulo {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-2);
   font-family: var(--font-body);
   font-size: var(--fs-label);
@@ -90,9 +89,28 @@
   color: var(--cream);
 }
 
-.fecho {
-  font-size: var(--fs-sm);
-  color: rgba(253, 250, 247, 0.72);
-  margin-bottom: var(--space-3);
-  max-width: 46ch;
+/* --- Foto ----------------------------------------------------------------- */
+/* Proporção fixa: a foto original é 3:4 e, na largura da coluna, renderizaria
+   bem mais alta que o texto ao lado. O recorte 4:5 aproxima as duas alturas. */
+.figura {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(245, 235, 224, 0.16);
+  background-color: rgba(31, 4, 9, 0.4);
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-9);
+  }
 }
