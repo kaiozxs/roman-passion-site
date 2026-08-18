@@ -5,14 +5,11 @@ import Reveal from "../ui/Reveal";
 import styles from "./Order.module.css";
 
 /**
- * Faixa de fechamento da página.
+ * Faixa de fechamento: texto à esquerda, fotos empilhadas à direita.
  *
- * Layout em duas faixas horizontais em vez de duas colunas: texto em cima,
- * fotos embaixo. Com duas fotos, a coluna de imagens ficaria quase o dobro da
- * altura do texto e sobraria um vazio grande ao lado do botão.
- *
- * Os locais de atendimento ficam em linha, não em caixa empilhada: são três
- * itens curtos, e a caixa alta deixava metade do espaço vazio à direita.
+ * As duas fotos usam proporção 4:3 — empilhadas, somam altura próxima à do
+ * texto ao lado, o que mantém as duas colunas equilibradas. Em proporção
+ * original (3:4) a pilha ficaria quase o dobro da altura do texto.
  */
 const FOTOS = [
   {
@@ -28,7 +25,7 @@ const FOTOS = [
 export default function Order() {
   return (
     <section className={styles.section} id="degustacao">
-      <div className="container">
+      <div className={`container ${styles.inner}`}>
         <Reveal className={styles.copy}>
           <span className={styles.label}>Degustação</span>
 
@@ -46,22 +43,22 @@ export default function Order() {
             olhos, conquiste os paladares e se torne parte inesquecível da
             história desse grande dia.
           </p>
-        </Reveal>
 
-        {/* Locais em linha, cada um com o seu fio dourado acima */}
-        <Reveal delay={100} className={styles.locais}>
-          <h3 className={styles.locaisTitulo}>
-            <Icon name="pin" size={15} />
-            Atendimento presencial em
-          </h3>
-          <ul>
-            {ATENDIMENTO.map((local) => (
-              <li key={local}>{local}</li>
-            ))}
-          </ul>
-        </Reveal>
+          {/* Locais com fio dourado acima de cada um, em vez de caixa fechada:
+              são três itens curtos, e a caixa deixava metade do espaço vazio à
+              direita e competia em peso com o botão logo abaixo. */}
+          <div className={styles.locais}>
+            <h3 className={styles.locaisTitulo}>
+              <Icon name="pin" size={15} />
+              Atendimento presencial em
+            </h3>
+            <ul>
+              {ATENDIMENTO.map((local) => (
+                <li key={local}>{local}</li>
+              ))}
+            </ul>
+          </div>
 
-        <Reveal delay={160} className={styles.acao}>
           <Button variant="solid" href={whatsappLink()} icon="whatsapp">
             Falar com a Roman
           </Button>
@@ -69,7 +66,7 @@ export default function Order() {
 
         <ul className={styles.galeria}>
           {FOTOS.map((f, i) => (
-            <Reveal as="li" key={f.arquivo} delay={200 + i * 90}>
+            <Reveal as="li" key={f.arquivo} delay={140 + i * 90}>
               <figure className={styles.figura}>
                 <img
                   src={`/images/doces/${f.arquivo}`}
