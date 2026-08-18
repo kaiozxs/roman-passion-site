@@ -46,18 +46,22 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  /* Não encolhe: com a logo em 64px, o nome da marca quebrava em duas linhas */
+  flex-shrink: 0;
 }
 
+/* Acompanha a largura da tela: em 320px a logo em 64px fixos empurrava o
+   botão do menu para fora da viewport. */
 .logo {
-  width: 64px;
-  height: 64px;
+  width: clamp(48px, 13vw, 64px);
+  height: clamp(48px, 13vw, 64px);
   object-fit: contain;
   transition: width var(--t-base), height var(--t-base);
 }
 
 .condensed .logo {
-  width: 52px;
-  height: 52px;
+  width: clamp(42px, 11vw, 52px);
+  height: clamp(42px, 11vw, 52px);
 }
 
 .brandText {
@@ -68,10 +72,11 @@
 
 .brandText strong {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 4.5vw, 1.75rem);
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.1;
+  white-space: nowrap;
   color: var(--text-strong);
 }
 
@@ -80,7 +85,18 @@
   font-weight: 500;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--gold);
+}
+
+/* "CHOCOLATERIA ARTESANAL" em caixa alta com 0.18em de espaçamento ocupa
+   ~198px e é o que define a largura do bloco da marca — mais do que o próprio
+   nome. Em telas estreitas ele empurrava o botão do menu fora da viewport.
+   A logo e o nome já identificam a marca sozinhos. */
+@media (max-width: 419px) {
+  .brandText small {
+    display: none;
+  }
 }
 
 /* --- Navegação ----------------------------------------------------------- */
@@ -94,6 +110,7 @@
   font-size: var(--fs-sm);
   font-weight: 500;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   color: var(--text-body);
   padding-block: var(--space-2);
   transition: color var(--t-fast);
@@ -200,8 +217,11 @@
   border-bottom: 1px solid var(--ink-line);
 }
 
-/* --- Desktop ------------------------------------------------------------- */
-@media (min-width: 900px) {
+/* --- Desktop -------------------------------------------------------------
+   1080px, não 900px: com a logo em 64px e o nome em 28px, a marca, o menu e
+   o botão só caem confortavelmente na linha a partir daí. Entre 900 e 1080
+   o hamburger é mais limpo do que um menu comprimido. */
+@media (min-width: 1080px) {
   .nav,
   .headerCta {
     display: flex;

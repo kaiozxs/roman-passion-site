@@ -1,4 +1,4 @@
-import { BRAND, CONTACT, whatsappLink } from "../../config";
+import { BRAND, whatsappLink } from "../../config";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import styles from "./Hero.module.css";
@@ -17,7 +17,7 @@ export default function Hero() {
             <em> com a sua festa.</em>
           </h1>
 
-          <p className={styles.lead}>{BRAND.assinatura}</p>
+          <p className={styles.lead}>{BRAND.manifesto}</p>
 
           <div className={styles.ctas}>
             <Button variant="solid" href={whatsappLink()} icon="whatsapp">
@@ -30,12 +30,8 @@ export default function Hero() {
 
           <ul className={styles.meta}>
             <li>
-              <Icon name="pin" size={16} />
-              {CONTACT.city}
-            </li>
-            <li>
               <Icon name="rings" size={16} />
-              {BRAND.manifesto}
+              {BRAND.assinatura}
             </li>
           </ul>
         </div>
