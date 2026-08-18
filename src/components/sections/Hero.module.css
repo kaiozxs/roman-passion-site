@@ -85,27 +85,19 @@
   margin-top: var(--space-2);
 }
 
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-6);
+/* Assinatura da marca: serifa em itálico, a mesma fonte do título — lê como
+   assinatura, não como legenda. O fio acima separa dos botões. */
+.assinatura {
+  width: 100%;
   margin-top: var(--space-4);
   padding-top: var(--space-5);
   border-top: 1px solid var(--ink-line);
-  width: 100%;
-}
-
-.meta li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-}
-
-.meta svg {
-  color: var(--gold);
-  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--cream);
 }
 
 /* --- Selo ---------------------------------------------------------------- */
