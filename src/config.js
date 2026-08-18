@@ -53,12 +53,18 @@ export const ATENDIMENTO = [
  * Reconhecimento público. Números conferidos nos perfis em agosto de 2026 —
  * eles mudam com o tempo, então atualize aqui quando necessário.
  *
- * Os selos oficiais do Casamentos.com.br não são reproduzidos no site: são
- * marca registrada do portal. Exibimos os fatos e linkamos a fonte.
+ * Os selos são os arquivos oficiais fornecidos pelo próprio Casamentos.com.br
+ * aos fornecedores premiados. Nunca desenhe uma imitação deles: a arte é marca
+ * registrada do portal.
  */
 export const RECONHECIMENTO = {
-  /** Anos em que a marca recebeu o Casamentos Awards. */
-  premios: ["2023", "2024", "2025", "2026"],
+  /** Anos em que a marca recebeu o Casamentos Awards, do mais recente ao antigo. */
+  premios: [
+    { ano: "2026", arquivo: "selo-casamentos-2026.jpg" },
+    { ano: "2025", arquivo: "selo-casamentos-2025.jpg" },
+    { ano: "2024", arquivo: "selo-casamentos-2024.jpg" },
+    { ano: "2023", arquivo: "selo-casamentos-2023.jpg" },
+  ],
   /** `url` torna o card clicável — a nota deixa de ser afirmação e vira prova. */
   avaliacoes: [
     {

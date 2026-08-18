@@ -1,4 +1,4 @@
-import { CONTACT, RECONHECIMENTO } from "../../config";
+import { RECONHECIMENTO } from "../../config";
 import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
@@ -8,11 +8,10 @@ import styles from "./Awards.module.css";
  * Prova social. Todos os números aqui são verificáveis nos perfis públicos —
  * nunca acrescente depoimento, nota ou prêmio que não possa ser conferido.
  *
- * Os selos gráficos do Casamentos.com.br não são recriados: são marca do
- * portal. A seção afirma os fatos e aponta para a fonte.
+ * Os selos do Casamentos Awards ficam no rodapé, não aqui.
  */
 export default function Awards() {
-  const { premios, avaliacoes } = RECONHECIMENTO;
+  const { avaliacoes } = RECONHECIMENTO;
 
   return (
     <section className={styles.section} id="reconhecimento">
@@ -20,11 +19,10 @@ export default function Awards() {
         <SectionHeading
           align="center"
           label="Reconhecimento"
-          title={`${premios.length} anos consecutivos premiados`}
-          lead="Quem contratou avaliou. As notas e os prêmios abaixo podem ser conferidos nos perfis públicos da Roman Passion."
+          title="Nota máxima nos dois portais"
+          lead="Quem contratou avaliou. As notas abaixo podem ser conferidas nos perfis públicos da Roman Passion."
         />
 
-        {/* --- Notas: cada card leva ao perfil onde a nota pode ser conferida --- */}
         <ul className={styles.notas}>
           {avaliacoes.map((a, i) => (
             <Reveal as="li" key={a.fonte} delay={i * 100}>
@@ -51,28 +49,6 @@ export default function Awards() {
             </Reveal>
           ))}
         </ul>
-
-        {/* --- Prêmios --- */}
-        <Reveal delay={200} className={styles.premios}>
-          <h3 className={styles.premiosTitulo}>
-            <Icon name="award" size={18} />
-            Casamentos Awards
-          </h3>
-          <ul className={styles.anos}>
-            {premios.map((ano) => (
-              <li key={ano}>{ano}</li>
-            ))}
-          </ul>
-          <a
-            className={styles.fonteLink}
-            href={CONTACT.casamentosUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Ver o perfil no Casamentos.com.br
-            <Icon name="arrow" size={16} />
-          </a>
-        </Reveal>
       </div>
     </section>
   );
