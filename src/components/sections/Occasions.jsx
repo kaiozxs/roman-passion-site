@@ -2,7 +2,6 @@ import { whatsappLink } from "../../config";
 import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import { ordinal } from "../../utils/format";
 import styles from "./Occasions.module.css";
 
 const OCCASIONS = [
@@ -47,10 +46,7 @@ export default function Occasions() {
           {OCCASIONS.map((item, index) => (
             <Reveal as="li" key={item.title} delay={index * 90} className={styles.card}>
               <Icon name={item.icon} size={30} className={styles.icon} />
-              <h3 className={styles.title}>
-                <span className={styles.num}>{ordinal(index)}</span>
-                {item.title}
-              </h3>
+              <h3 className={styles.title}>{item.title}</h3>
               <p className={styles.text}>{item.text}</p>
               <a
                 className={styles.link}
