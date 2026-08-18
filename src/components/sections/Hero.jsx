@@ -1,6 +1,5 @@
 import { BRAND, whatsappLink } from "../../config";
 import Button from "../ui/Button";
-import Icon from "../ui/Icon";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -28,12 +27,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <ul className={styles.meta}>
-            <li>
-              <Icon name="rings" size={16} />
-              {BRAND.assinatura}
-            </li>
-          </ul>
+          <p className={styles.assinatura}>{BRAND.assinatura}</p>
         </div>
 
         {/* Selo da marca: medalhão de fios dourados concêntricos */}
