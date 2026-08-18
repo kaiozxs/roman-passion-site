@@ -68,6 +68,11 @@ export const GALLERY = [
     arquivo: "lembrancas-laco.webp",
     alt: "Lembranças de chocolate embaladas uma a uma e fechadas com laço de cetim branco, em bowl de madeira.",
   },
+  {
+    id: "g12",
+    arquivo: "degustacao-bandejas.jpg",
+    alt: "Bandeja espelhada com doces variados: copinhos de chocolate com frutas vermelhas, tortinhas de mirtilo, bem-casados e taças de creme com calda.",
+  },
 ];
 
 /** Caminho público da foto. */

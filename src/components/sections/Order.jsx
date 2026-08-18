@@ -5,14 +5,15 @@ import Reveal from "../ui/Reveal";
 import styles from "./Order.module.css";
 
 /**
- * Faixa de fechamento: uma única ação, agendar a degustação presencial.
+ * Faixa de fechamento: texto à esquerda, foto da mesa de degustação à direita.
  *
- * A lista de canais fica só no rodapé, que vem imediatamente abaixo.
+ * A foto mostra o atendimento que o texto descreve — a mesa montada, com a
+ * folha de boas-vindas, as taças e as bandejas de prova.
  */
 export default function Order() {
   return (
     <section className={styles.section} id="degustacao">
-      <div className="container">
+      <div className={`container ${styles.inner}`}>
         <Reveal className={styles.copy}>
           <span className={styles.label}>Degustação</span>
 
@@ -43,13 +44,21 @@ export default function Order() {
             </ul>
           </div>
 
-          <p className={styles.fecho}>
-            Entre em contato para saber mais e agendar seu atendimento com a Roman.
-          </p>
-
           <Button variant="solid" href={whatsappLink()} icon="whatsapp">
             Falar com a Roman
           </Button>
+        </Reveal>
+
+        <Reveal delay={140} className={styles.figura}>
+          <img
+            src="/images/doces/degustacao-mesa.jpg"
+            width="960"
+            height="1280"
+            alt="Mesa de degustação montada: duas bandejas espelhadas com bombons e doces variados, jarra de água, taças azuis, guardanapos e a folha de boas-vindas da degustação Roman."
+            loading="lazy"
+            decoding="async"
+            className={styles.foto}
+          />
         </Reveal>
       </div>
     </section>
