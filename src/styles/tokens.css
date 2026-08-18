@@ -39,6 +39,9 @@
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
+  /* Script do nome da marca no cabeçalho, aproximando a letra da logomarca.
+     TODO: se a fonte original da logo for identificada, trocar aqui. */
+  --font-script: "Kaushan Script", "Brush Script MT", cursive;
 
   /* Escala fluida: encolhe no mobile sem media query.
      O display também respeita a ALTURA da tela (9vh) — sem isso, num notebook
