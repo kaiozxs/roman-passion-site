@@ -38,12 +38,28 @@ export default function Atelier() {
   return (
     <section className={styles.section} id="atelier">
       <div className={`container ${styles.inner}`}>
-        <SectionHeading
-          tone="light"
-          label="A Chocolateria"
-          title="Do primeiro contato até a entrega"
-          lead="A Roman Passion acompanha o cliente em cada etapa, começando pela degustação presencial e passando por uma consultoria especializada para definir os doces ideais para cada celebração. Do planejamento à entrega no grande dia, cuidamos de cada detalhe para que tudo seja perfeito."
-        />
+        {/* Coluna da esquerda: texto e foto. A foto acompanha a rolagem porque
+            a coluna dos pilares, à direita, é bem mais alta. */}
+        <div className={styles.coluna}>
+          <SectionHeading
+            tone="light"
+            label="A Chocolateria"
+            title="Do primeiro contato até a entrega"
+            lead="A Roman Passion acompanha o cliente em cada etapa, começando pela degustação presencial e passando por uma consultoria especializada para definir os doces ideais para cada celebração. Do planejamento à entrega no grande dia, cuidamos de cada detalhe para que tudo seja perfeito."
+          />
+
+          <Reveal delay={120} className={styles.figura}>
+            <img
+              src="/images/doces/mesa-bem-casados-coloridos.jpg"
+              width="720"
+              height="1280"
+              alt="Mesa redonda coberta de bem-casados embalados e amarrados com laços rosa e laranja, dispostos em círculos ao redor de um arranjo de flores coloridas."
+              loading="lazy"
+              decoding="async"
+              className={styles.foto}
+            />
+          </Reveal>
+        </div>
 
         <ol className={styles.steps}>
           {STEPS.map((step, index) => (
