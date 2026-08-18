@@ -52,16 +52,51 @@
 
 /* Acompanha a largura da tela: em 320px a logo em 64px fixos empurrava o
    botão do menu para fora da viewport. */
+/* Tamanhos fixos por faixa, NÃO clamp com vw.
+   Motivo: a logo é flex item de `.brand`, que é dimensionado pelo conteúdo.
+   Com `clamp(56px, 15vw, 84px)` o navegador usa o valor MÍNIMO para medir a
+   largura intrínseca do pai e depois o flex-shrink encolhe a imagem de volta
+   para ele — a logo ficava travada em 56px em qualquer tela. */
 .logo {
-  width: clamp(48px, 13vw, 64px);
-  height: clamp(48px, 13vw, 64px);
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  max-width: none;
   object-fit: contain;
   transition: width var(--t-base), height var(--t-base);
 }
 
+@media (min-width: 480px) {
+  .logo {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .logo {
+    width: 84px;
+    height: 84px;
+  }
+}
+
 .condensed .logo {
-  width: clamp(42px, 11vw, 52px);
-  height: clamp(42px, 11vw, 52px);
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 480px) {
+  .condensed .logo {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .condensed .logo {
+    width: 66px;
+    height: 66px;
+  }
 }
 
 .brandText {
@@ -70,12 +105,15 @@
   line-height: 1.2;
 }
 
+/* Script da logomarca. Fonte de letra corrida rende menor que serifa no mesmo
+   corpo, por isso o tamanho sobe; e pede line-height maior por causa das
+   hastes que descem. */
 .brandText strong {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 4.5vw, 1.75rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
+  font-family: var(--font-script);
+  font-size: clamp(1.5rem, 5vw, 2.125rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
   white-space: nowrap;
   color: var(--text-strong);
 }
