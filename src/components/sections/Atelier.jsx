@@ -52,10 +52,7 @@ export default function Atelier() {
                 <Icon name={step.icon} size={26} />
               </span>
               <div>
-                <h3 className={styles.stepTitle}>
-                  <span className={styles.stepNum}>0{index + 1}</span>
-                  {step.title}
-                </h3>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepSubtitle}>{step.subtitle}</p>
                 <p className={styles.stepText}>{step.text}</p>
               </div>
