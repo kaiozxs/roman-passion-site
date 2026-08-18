@@ -36,7 +36,6 @@ export const CONTACT = {
    */
   googleUrl:
     "https://www.google.com/maps/search/?api=1&query=Roman+Passion+Doces+Finos+%26+Bem+Casados+Nova+Am%C3%A9rica+Rio+de+Janeiro",
-  city: "Rio de Janeiro, RJ",
   /** Presença verificada no portal de casamentos (conferido no perfil). */
   since: "No Casamentos.com.br desde 2019",
   /** Alcance da entrega. */
