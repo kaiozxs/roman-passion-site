@@ -43,11 +43,11 @@ export default function Mesas() {
   const foto = aberta === null ? null : MESAS[aberta];
 
   return (
-    <section className={styles.section} id="mesas">
+    <section className={styles.section} id="eventos">
       <div className="container">
         <SectionHeading
           tone="light"
-          label="Mesas que montamos"
+          label="Eventos que realizamos"
           title="Cada evento tem a sua mesa"
           lead="Fotos de casamentos e celebrações reais que atendemos. Clique em qualquer imagem para ver de perto."
         />
