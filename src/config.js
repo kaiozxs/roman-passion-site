@@ -11,8 +11,11 @@ export const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
 export const BRAND = {
   name: "Roman Passion",
   tagline: "Chocolateria Artesanal",
-  /** Assinatura da marca, exibida no hero e no rodapé. */
+  /** Assinatura da marca, exibida no rodapé. */
   assinatura: "Desde 2019, adoçando momentos que ficam para sempre.",
+  /** Manifesto da marca, exibido na linha de meta do hero. */
+  manifesto:
+    "Transformando seus momentos inesquecíveis em experiências inigualavelmente doces.",
 };
 
 export const CONTACT = {

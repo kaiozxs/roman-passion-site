@@ -35,7 +35,7 @@ export default function Hero() {
             </li>
             <li>
               <Icon name="rings" size={16} />
-              {CONTACT.since}
+              {BRAND.manifesto}
             </li>
           </ul>
         </div>
