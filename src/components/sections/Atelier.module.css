@@ -43,20 +43,9 @@
 }
 
 .stepTitle {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
   font-size: var(--fs-h3);
   color: var(--text-on-light);
   margin-bottom: var(--space-2);
-}
-
-.stepNum {
-  font-family: var(--font-body);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: var(--tracking-label);
-  color: var(--gold-dark);
 }
 
 /* Subtítulo em itálico: resume o pilar antes do texto corrido */
