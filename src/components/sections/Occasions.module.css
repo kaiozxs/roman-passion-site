@@ -30,20 +30,7 @@
 }
 
 .title {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
   font-size: var(--fs-h3);
-}
-
-/* Numeração da ocasião, em ouro */
-.num {
-  font-family: var(--font-body);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: var(--tracking-label);
-  color: var(--gold);
-  flex-shrink: 0;
 }
 
 .text {
