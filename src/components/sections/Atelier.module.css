@@ -11,6 +11,33 @@
   align-items: start;
 }
 
+/* --- Coluna da esquerda: texto + foto ------------------------------------- */
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* Proporção fixa em 4:5. Sem isso a foto (720x1280) renderizava com 928px de
+   altura na largura da coluna — mais alta que a tela, e a coluna esquerda
+   passava a ser a mais comprida, só invertendo de lado o vazio que a foto
+   vinha resolver. */
+.figura {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-light-alt);
+  box-shadow: var(--shadow-light);
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* --- Etapas -------------------------------------------------------------- */
 .steps {
   display: flex;
@@ -70,5 +97,11 @@
   .inner {
     grid-template-columns: 1fr 1.1fr;
     gap: var(--space-9);
+  }
+
+  /* Sem `sticky`: com a foto, as duas colunas ficaram de alturas parecidas, e
+     um bloco fixo mais alto que a viewport se comporta mal na rolagem. */
+  .coluna {
+    align-self: start;
   }
 }
