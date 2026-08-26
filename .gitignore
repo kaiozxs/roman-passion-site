@@ -17,10 +17,11 @@ dist-ssr/
 
 # ==========================================================================
 # Segredos — NUNCA versionar
+# O site é estático e não usa variável de ambiente nenhuma. As regras ficam
+# como rede de proteção, para o caso de alguma ser introduzida no futuro.
 # ==========================================================================
 .env
 .env.*
-!.env.example
 
 # ==========================================================================
 # Logs e temporários

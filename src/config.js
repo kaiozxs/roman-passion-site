@@ -5,9 +5,6 @@
  * vai para o bundle do navegador, então nunca coloque senha ou token.
  */
 
-/** Base da API. Em produção, defina VITE_API_URL no ambiente de build. */
-export const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
-
 export const BRAND = {
   name: "Roman Passion",
   tagline: "Chocolateria Artesanal",
