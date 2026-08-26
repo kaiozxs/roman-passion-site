@@ -1,10 +1,17 @@
-# Cabeçalhos HTTP lidos pelo Cloudflare Pages.
+# Cabeçalhos HTTP lidos pela Cloudflare.
 # Este arquivo é copiado para a raiz do build (não vira uma página do site).
+#
+# A Content-Security-Policy NÃO está aqui, e sim numa meta tag no index.html.
+# Motivo: na meta ela também vale no servidor de desenvolvimento, então uma
+# violação nova aparece durante o trabalho, e não só depois de publicar.
 
+# Permissions-Policy: o site não usa nenhuma dessas APIs. Desligar evita que
+# um script injetado consiga pedir permissão em nome do domínio.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
 
 # Os arquivos de assets levam hash no nome (index-a1b2c3.js), então trocam de
 # nome a cada build. Podem ser cacheados para sempre com segurança.
